@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+suf=""
+suf_set=0
+for arg in "$@"; do
+  if [ $suf_set -ne 1 ]; then
+    suf="$arg"
+    suf_set=1
+  else
+    mv "$arg" "$arg$suf"
+  fi
+done
