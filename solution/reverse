@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+output=""
+while read -r p; do
+  output="$p"$'\n'"$output"
+done
+
+echo -n "$output"
